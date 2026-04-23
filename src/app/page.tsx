@@ -59,7 +59,7 @@ export default function Home() {
             {/* Left: Reel Video Placeholder */}
             <div className="w-full md:w-5/12 h-[300px] md:h-auto relative bg-brand-teal overflow-hidden flex-shrink-0">
                {/* Subtle pattern or image placeholder */}
-               <img src="/Logo-removebg-preview.png" className="absolute -left-10 -bottom-10 w-64 h-64 opacity-10 object-contain" alt="" />
+               <img src="/Logo-removebg-preview.png" className="absolute -left-10 -bottom-10 w-64 h-64 opacity-10 object-contain" alt="Nani's Touch Logo Watermark" />
                
                <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/80 via-transparent to-brand-slate/20"></div>
                
@@ -264,11 +264,11 @@ export default function Home() {
             {/* SVG Illustration: mother + baby, monoline brand style */}
             <div className="relative z-10 p-12 flex flex-col items-center">
 
-              <img src="/Logo-removebg-preview.png" className="w-full hero-blob float z-10" />
+              <img src="/Logo-removebg-preview.png" className="w-full hero-blob float z-10" alt="Nani's Touch Premium Japa Care in Pune" />
 
               {/* Logo watermark at bottom */}
               <div className="flex items-center gap-2 opacity-50 mt-2">
-                <img src="/Logo-removebg-preview.png" className="w-5 h-5 object-contain" />
+                <img src="/Logo-removebg-preview.png" className="w-5 h-5 object-contain" alt="Nani's Touch Mini Logo" />
                 <span className="font-serif text-white text-sm font-semibold tracking-wide">Nani's Touch</span>
               </div>
             </div>
@@ -816,7 +816,7 @@ export default function Home() {
     <div className="container mx-auto px-6 max-w-3xl text-center">
       {/* Illustration: simple maternal warmth motif */}
       <div className="w-20 h-20 mx-auto mb-8 bg-brand-teal rounded-full p-3 shadow-lg">
-        <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" />
+        <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Maternal Care Motif" />
       </div>
       <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4" style={{"textWrap": "pretty"}}>
         Motherhood is beautiful.<br />
@@ -850,7 +850,7 @@ export default function Home() {
     <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row justify-between items-center gap-4">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 bg-brand-teal rounded-full p-1 flex items-center justify-center">
-          <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" />
+          <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Logo Footer" />
         </div>
         <span className="font-serif text-xl font-bold text-brand-teal">Nani's Touch</span>
       </div>
