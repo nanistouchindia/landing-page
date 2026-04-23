@@ -2,12 +2,46 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { submitWaitlist } from "@/app/actions";
 
 export default function Home() {
   const [navOpacity, setNavOpacity] = useState(0);
   const [slots, setSlots] = useState(4);
   const [slotsFontWeight, setSlotsFontWeight] = useState("semibold");
   const [showPopup, setShowPopup] = useState(false);
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "", location: "" });
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const result = await submitWaitlist({ 
+        name: formData.name, 
+        phone: formData.phone, 
+        location: formData.location 
+      });
+        
+      if (result.error) {
+        throw new Error(result.error);
+      }
+      
+      setIsSuccess(true);
+      setTimeout(() => {
+        setShowPopup(false);
+        setIsSuccess(false);
+        setFormData({ name: "", phone: "", location: "" });
+      }, 3000);
+    } catch (error: any) {
+      console.error("Error submitting waitlist:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -87,26 +121,40 @@ export default function Home() {
                 Our specialized Japa care slots fill up weeks in advance. Join the waitlist today to get priority booking and an exclusive consultation.
               </p>
 
-              <form className="space-y-4 sm:space-y-5" onSubmit={(e) => { e.preventDefault(); setShowPopup(false); }}>
-                <div>
-                  <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Mother's Name</label>
-                  <input type="text" required placeholder="e.g. Priya Sharma" className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
+              {isSuccess ? (
+                <div className="flex flex-col items-center justify-center space-y-4 py-8 animate-[fadeUp_0.3s_ease-out]">
+                  <div className="w-16 h-16 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="font-serif text-2xl text-brand-teal font-semibold">You're on the list!</h3>
+                  <p className="text-brand-slate/60 text-sm text-center">We'll reach out on WhatsApp shortly.</p>
                 </div>
-                <div>
-                  <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">WhatsApp Number</label>
-                  <input type="tel" required placeholder="+91 99999 99999" className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Location (Pune)</label>
-                  <textarea required placeholder="Your address or area..." rows={2} className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate resize-none"></textarea>
-                </div>
-                <button type="submit" className="w-full py-4 bg-brand-peach text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-brand-peach/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 btn-glow">
-                  Join Priority Waitlist
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </form>
+              ) : (
+                <form className="space-y-4 sm:space-y-5" onSubmit={handleWaitlistSubmit}>
+                  <div>
+                    <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Mother's Name</label>
+                    <input type="text" required placeholder="e.g. Priya Sharma" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">WhatsApp Number</label>
+                    <input type="tel" required placeholder="+91 99999 99999" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Location (Pune)</label>
+                    <textarea required placeholder="Your address or area..." rows={2} value={formData.location} onChange={(e) => setFormData({...formData, location: e.target.value})} className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate resize-none"></textarea>
+                  </div>
+                  <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-brand-peach text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-brand-peach/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 btn-glow disabled:opacity-70 disabled:hover:translate-y-0">
+                    {isSubmitting ? 'Securing slot...' : 'Join Priority Waitlist'}
+                    {!isSubmitting && (
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    )}
+                  </button>
+                </form>
+              )}
               <p className="text-center text-[10px] text-brand-slate/40 mt-5">We respect your privacy. No spam, ever.</p>
             </div>
           </div>
