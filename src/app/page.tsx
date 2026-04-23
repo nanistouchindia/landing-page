@@ -45,19 +45,19 @@ export default function Home() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
           <div className="absolute inset-0 bg-brand-slate/60 backdrop-blur-sm transition-opacity" onClick={() => setShowPopup(false)}></div>
           
-          <div className="relative w-full max-w-4xl bg-brand-cream rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-[fadeUp_0.5s_ease-out]">
+          <div className="relative w-full max-w-4xl max-h-[95vh] overflow-y-auto bg-brand-cream rounded-3xl shadow-2xl flex flex-col md:flex-row animate-[fadeUp_0.5s_ease-out]">
             {/* Close button */}
             <button 
               onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/40 text-brand-slate backdrop-blur-md transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-[110] w-8 h-8 flex items-center justify-center rounded-full bg-white/60 hover:bg-white/90 text-brand-teal backdrop-blur-md transition-all shadow-md"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
             {/* Left: Reel Video Placeholder */}
-            <div className="w-full md:w-5/12 h-[300px] md:h-auto relative bg-brand-teal overflow-hidden flex-shrink-0">
+            <div className="w-full md:w-5/12 h-[200px] sm:h-[250px] md:h-auto relative bg-brand-teal overflow-hidden flex-shrink-0">
                {/* Subtle pattern or image placeholder */}
                <img src="/Logo-removebg-preview.png" className="absolute -left-10 -bottom-10 w-64 h-64 opacity-10 object-contain" alt="Nani's Touch Logo Watermark" />
                
@@ -80,14 +80,14 @@ export default function Home() {
             </div>
 
             {/* Right: Form */}
-            <div className="w-full md:w-7/12 p-8 md:p-12 flex flex-col justify-center">
+            <div className="w-full md:w-7/12 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-2">Exclusive Waitlist</div>
               <h2 className="font-serif text-3xl md:text-4xl text-brand-teal font-semibold mb-3">Secure Your Slot</h2>
-              <p className="text-brand-slate/60 text-sm mb-8 leading-relaxed">
+              <p className="text-brand-slate/60 text-sm mb-6 leading-relaxed">
                 Our specialized Japa care slots fill up weeks in advance. Join the waitlist today to get priority booking and an exclusive consultation.
               </p>
 
-              <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setShowPopup(false); }}>
+              <form className="space-y-4 sm:space-y-5" onSubmit={(e) => { e.preventDefault(); setShowPopup(false); }}>
                 <div>
                   <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Mother's Name</label>
                   <input type="text" required placeholder="e.g. Priya Sharma" className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
@@ -113,23 +113,21 @@ export default function Home() {
         </div>
       )}
 
-      {/* ── Scarcity Bar (top) ──────────────────────────────────── */}
-      <div className="scarcity-bar text-white text-center py-2.5 text-xs font-semibold tracking-wide">
-        <span className="opacity-90">
-          ⚡ Only <span id="slots-count" style={{ fontWeight: slotsFontWeight }}>{slots}</span> new family slots remaining in Pune this week —
-        </span>
-        <a href="#packages" className="underline font-bold">Secure yours now →</a>
-      </div>
+      {/* ── Sticky Header Wrapper ──────────────────────────────────── */}
+      <header className="fixed top-0 w-full z-50 flex flex-col">
+        {/* ── Scarcity Bar ──────────────────────────────────── */}
+        <div className={`scarcity-bar text-white text-center px-4 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 overflow-hidden ${navOpacity === 1 ? 'max-h-0 py-0 opacity-0' : 'max-h-[80px] py-2.5 opacity-100'}`}>
+          <span className="opacity-90 inline-block leading-tight">
+            ⚡ Only <span id="slots-count" style={{ fontWeight: slotsFontWeight }}>{slots}</span> new family slots remaining in Pune this week — <a href="#packages" className="underline font-bold whitespace-nowrap inline-block ml-1">Secure yours now →</a>
+          </span>
+        </div>
 
-
-  
-
-  {/* ── Navigation ──────────────────────────────────────────── */}
-  <nav className={`fixed w-full z-50 transition-all duration-300 ${navOpacity === 1 ? 'top-0' : 'top-8'}`} id="navbar">
-    <div
-      className="absolute inset-0 bg-brand-cream/92 backdrop-blur-md border-b border-brand-teal/8 shadow-sm transition-all"
-      id="nav-bg" style={{ opacity: navOpacity }}></div>
-    <div className="container mx-auto px-6 py-4 relative z-10 flex justify-between items-center max-w-7xl">
+        {/* ── Navigation ──────────────────────────────────────────── */}
+        <nav className="w-full relative transition-all duration-300" id="navbar">
+          <div
+            className="absolute inset-0 bg-brand-cream/92 backdrop-blur-md border-b border-brand-teal/8 shadow-sm transition-all duration-300"
+            id="nav-bg" style={{ opacity: navOpacity }}></div>
+          <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 relative z-10 flex justify-between items-center max-w-7xl">
       <div className="flex items-center gap-3">
         <div className="w-9 h-9 bg-brand-teal rounded-full p-1 flex items-center justify-center">
           <img src="/Logo-removebg-preview.png" alt="Nani's Touch" className="w-full h-full object-contain" />
@@ -152,10 +150,11 @@ export default function Home() {
         Book Now
       </a>
     </div>
-  </nav>
+      </nav>
+    </header>
 
   {/* ── Hero ────────────────────────────────────────────────── */}
-  <section className="relative min-h-[100svh] flex items-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+  <section className="relative min-h-[100svh] flex items-center pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
     {/* Background wash */}
     <div
       className="absolute top-0 right-0 w-[700px] h-[700px] bg-brand-lightTeal rounded-full blur-3xl opacity-60 -translate-y-1/3 translate-x-1/4 pointer-events-none">
