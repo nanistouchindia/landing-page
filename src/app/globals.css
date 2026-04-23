@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-teal: #125A6F;
+  --color-brand-lightTeal: #E6F0F2;
+  --color-brand-peach: #E07A5F;
+  --color-brand-cream: #FDFBF7;
+  --color-brand-slate: #2D3748;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background: #FDFBF7;
+    color: #2D3748;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.25s;
+}
+
+.delay-3 {
+  animation-delay: 0.4s;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(224, 122, 95, 0.4);
+}
+
+.btn-teal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(18, 90, 111, 0.35);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(18, 90, 111, 0.12);
+  border-color: rgba(18, 90, 111, 0.25) !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #125A6F;
+  border-radius: 10px;
+}
+
+.scarcity-bar {
+  background: linear-gradient(90deg, #E07A5F 0%, #c85f44 40%, #E07A5F 60%, #c85f44 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.hero-blob {
+  filter: drop-shadow(0 20px 40px rgba(18, 90, 111, 0.2));
+}
+
+.quote-mark {
+  font-family: var(--font-serif);
+  font-size: 80px;
+  line-height: 0.5;
+  color: rgba(18, 90, 111, 0.1);
+}
+
+.progress-fill {
+  transition: width 1s ease-out;
 }
