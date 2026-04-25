@@ -93,7 +93,7 @@ export default function Home() {
             {/* Left: Reel Video Placeholder */}
             <div className="w-full md:w-5/12 h-[200px] sm:h-[250px] md:h-auto relative bg-brand-teal overflow-hidden flex-shrink-0">
                {/* Subtle pattern or image placeholder */}
-               <img src="/Logo-removebg-preview.png" className="absolute -left-10 -bottom-10 w-64 h-64 opacity-10 object-contain" alt="Nani's Touch Logo Watermark" />
+               <img src="/Logo-removebg-preview.png" className="absolute -left-10 -bottom-10 w-64 h-64 opacity-10 object-contain" alt="Nani's Touch - Japa Care and Baby Massage Service Pune" />
                
                <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/80 via-transparent to-brand-slate/20"></div>
                
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 relative z-10 flex justify-between items-center max-w-7xl">
       <div className="flex items-center gap-3">
         <div className="w-9 h-9 bg-brand-teal rounded-full p-1 flex items-center justify-center">
-          <img src="/Logo-removebg-preview.png" alt="Nani's Touch" className="w-full h-full object-contain" />
+          <img src="/Logo-removebg-preview.png" alt="Nani's Touch Japa Care Pune Logo" className="w-full h-full object-contain" />
         </div>
         <span className="font-serif text-xl font-bold text-brand-teal">Nani's Touch</span>
       </div>
@@ -190,6 +190,9 @@ export default function Home() {
       </div>
       <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'd%20like%20to%20book%20a%20session."
         target="_blank"
+        rel="noopener noreferrer"
+        title="Book Japa Care Service in Pune - Nani's Touch"
+        aria-label="Book Japa care or baby massage service in Pune on WhatsApp"
         className="bg-brand-peach text-white px-5 py-2.5 rounded-full font-semibold text-sm btn-glow transition-all flex items-center gap-2 shadow-md">
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
           <path
@@ -311,11 +314,11 @@ export default function Home() {
             {/* SVG Illustration: mother + baby, monoline brand style */}
             <div className="relative z-10 p-12 flex flex-col items-center">
 
-              <img src="/Logo-removebg-preview.png" className="w-full hero-blob float z-10" alt="Nani's Touch Premium Japa Care in Pune" />
+              <img src="/Logo-removebg-preview.png" className="w-full hero-blob float z-10" alt="Nani's Touch - Pune's Best Pediatrician-Certified Japa Care and Baby Maalish Service" />
 
               {/* Logo watermark at bottom */}
               <div className="flex items-center gap-2 opacity-50 mt-2">
-                <img src="/Logo-removebg-preview.png" className="w-5 h-5 object-contain" alt="Nani's Touch Mini Logo" />
+                <img src="/Logo-removebg-preview.png" className="w-5 h-5 object-contain" alt="Nani's Touch Japa Care Pune" />
                 <span className="font-serif text-white text-sm font-semibold tracking-wide">Nani's Touch</span>
               </div>
             </div>
@@ -863,7 +866,7 @@ export default function Home() {
     <div className="container mx-auto px-6 max-w-3xl text-center">
       {/* Illustration: simple maternal warmth motif */}
       <div className="w-20 h-20 mx-auto mb-8 bg-brand-teal rounded-full p-3 shadow-lg">
-        <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Maternal Care Motif" />
+        <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch - Trusted Postpartum and Newborn Care in Pune" />
       </div>
       <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4" style={{"textWrap": "pretty"}}>
         Motherhood is beautiful.<br />
@@ -894,18 +897,29 @@ export default function Home() {
 
   {/* ── Footer ──────────────────────────────────────────────── */}
   <footer className="bg-white border-t border-brand-teal/8 py-12">
-    <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row justify-between items-center gap-4">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 bg-brand-teal rounded-full p-1 flex items-center justify-center">
-          <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Logo Footer" />
+    <div className="container mx-auto px-6 max-w-7xl">
+
+      {/* SEO: Local business address block — visible to crawlers */}
+      <address className="not-italic text-center text-xs text-brand-slate/35 mb-6 leading-relaxed">
+        <strong className="text-brand-teal/60 font-semibold">Nani's Touch</strong> — Japa Care &amp; Baby Massage Service ·{" "}
+        <span>Pune, Maharashtra, India</span> ·{" "}
+        <a href="tel:+919999999999" className="hover:text-brand-teal transition-colors" title="Call Nani's Touch Japa Care Pune">+91 99999 99999</a> ·{" "}
+        <span>Serving: Wakad · Baner · Koregaon Park · Kothrud · Viman Nagar · Hinjewadi · Aundh</span>
+      </address>
+
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-brand-teal rounded-full p-1 flex items-center justify-center">
+            <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Japa Care and Baby Massage Service Pune" />
+          </div>
+          <span className="font-serif text-xl font-bold text-brand-teal">Nani's Touch</span>
         </div>
-        <span className="font-serif text-xl font-bold text-brand-teal">Nani's Touch</span>
-      </div>
-      <div className="text-xs text-brand-slate/40 text-center md:text-right">
-        <div>&copy; 2026 Nani's Touch · Elevating Japa Care · Pune</div>
-        <div className="mt-1 flex gap-4 justify-center md:justify-end">
-          <a href="#" className="hover:text-brand-teal transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-brand-teal transition-colors">Terms of Service</a>
+        <div className="text-xs text-brand-slate/40 text-center md:text-right">
+          <div>&copy; 2026 Nani's Touch · Elevating Japa Care · Pune</div>
+          <div className="mt-1 flex gap-4 justify-center md:justify-end">
+            <a href="#" className="hover:text-brand-teal transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-brand-teal transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </div>
@@ -913,6 +927,9 @@ export default function Home() {
 
   {/* ── Floating WhatsApp ───────────────────────────────────── */}
   <a href="https://wa.me/919999999999" target="_blank"
+    rel="noopener noreferrer"
+    title="Chat with Nani's Touch on WhatsApp - Japa Care Pune"
+    aria-label="Chat with Nani's Touch Japa care service on WhatsApp"
     className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center group">
     <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
       <path
