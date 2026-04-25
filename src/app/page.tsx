@@ -13,6 +13,7 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", location: "" });
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -832,93 +833,144 @@ export default function Home() {
 
       {/* ── Packages ────────────────────────────────────────────── */}
       <section id="packages" className="py-24 bg-brand-lightTeal/30 relative">
-        {/* Urgency notice */}
-        <div className="container mx-auto px-6 max-w-4xl mb-12">
-          <div className="bg-brand-peach/10 border border-brand-peach/25 rounded-2xl p-4 flex items-center gap-4">
-            <div className="w-8 h-8 bg-brand-peach/20 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg className="w-4 h-4 text-brand-peach" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div className="text-sm text-brand-slate/80">
-              <strong className="text-brand-peach">Availability alert:</strong> Due to high demand, new bookings in Pune are
-              filling fast. The earlier you book, the sooner your dedicated Nani is assigned — we recommend booking at
-              <strong>week 36 of pregnancy</strong> or immediately after delivery.
+        <div className="container mx-auto px-6 max-w-7xl">
+
+          {/* Header */}
+          <div className="text-center mb-4">
+            <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-3">Transparent pricing · No surprises</div>
+            <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4">Care Packages 2025</h2>
+            <p className="text-brand-slate/60 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+              Every package combines ancestral Japa wisdom with clinical-grade hygiene — choose the level of care that feels right for your family.
+            </p>
+          </div>
+
+          {/* Urgency notice */}
+          <div className="max-w-3xl mx-auto mb-12 mt-8">
+            <div className="bg-brand-peach/10 border border-brand-peach/25 rounded-2xl p-4 flex items-center gap-4">
+              <div className="w-8 h-8 bg-brand-peach/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-4 h-4 text-brand-peach" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p className="text-sm text-brand-slate/80">
+                <strong className="text-brand-peach">Slots filling fast:</strong> We recommend booking at <strong>week 36 of pregnancy</strong> or immediately after delivery. The earlier you book, the sooner your dedicated specialist is assigned.
+              </p>
             </div>
           </div>
-        </div>
 
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-3">Transparent pricing. No surprises.
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4">Choose your programme</h2>
-          <p className="text-brand-slate/60 mb-12 max-w-xl mx-auto text-lg font-light">Both packages include everything. The
-            difference is time — and 40 days is the complete traditional <em>chilla</em> period for good reason.</p>
+          {/* 4 Package cards — 2×2 grid */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-14 text-left items-stretch">
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
-            {/* Package 1 */}
-            <div
-              className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-md relative card-hover transition-all duration-300">
-              <div
-                className="absolute top-0 right-0 bg-brand-slate/80 text-white text-[10px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-xl rounded-tr-[2rem]">
-                Standard</div>
-              <div className="text-brand-teal/60 text-xs font-bold uppercase tracking-widest mb-2 mt-2">30-Day Recovery</div>
-              <div className="font-serif text-4xl text-brand-teal font-bold mb-1">₹28,000</div>
-              <div className="text-brand-slate/40 text-sm mb-6 pb-6 border-b border-gray-100">₹933 per session · Perfect for
-                foundational recovery</div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Daily 1.5–2 hour home session</li>
-                <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Mother + Baby massage (Maalish)</li>
-                <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Traditional newborn bathing routine</li>
-                <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Premium doctor-approved oil kit</li>
-                <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Sanitised kit every visit</li>
-                <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Guaranteed replacement cover</li>
+            {/* SILVER */}
+            <div className="bg-white rounded-[2rem] p-7 border border-gray-100 shadow-md relative card-hover transition-all duration-300 flex flex-col">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-brand-slate/40 mb-1">⭐ Silver</div>
+              <h3 className="font-serif text-2xl text-brand-teal font-semibold mb-1">Nani's Blessing</h3>
+              <p className="text-brand-slate/50 text-xs italic mb-4">"A gentle start — every newborn's first right."</p>
+              <div className="font-serif text-3xl text-brand-teal font-bold mb-0.5">₹18,000</div>
+              <div className="text-brand-slate/40 text-xs mb-5 pb-5 border-b border-gray-100">30 sessions · 45 min each · Baby only</div>
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Traditional oil baby massage</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Warm water bath & swaddling</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Ayurvedic oil kit included</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>WhatsApp daily care log</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Missed session guarantee</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Welcome gift hamper</li>
               </ul>
-              <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%2030-Day%20Package."
-                target="_blank"
-                className="block w-full py-3.5 text-center border-2 border-brand-teal text-brand-teal rounded-full font-semibold hover:bg-brand-teal hover:text-white transition-colors text-sm">
+              <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%20Silver%20Nani's%20Blessing%20package." target="_blank" rel="noopener noreferrer"
+                className="block w-full py-3 text-center border-2 border-brand-teal text-brand-teal rounded-full font-semibold hover:bg-brand-teal hover:text-white transition-colors text-sm">
                 Enquire on WhatsApp
               </a>
             </div>
 
-            {/* Package 2 */}
-            <div
-              className="bg-brand-teal rounded-[2rem] p-8 shadow-2xl relative card-hover transition-all duration-300 md:-translate-y-4">
-              <div
-                className="absolute top-0 right-0 bg-brand-peach text-white text-[10px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-xl rounded-tr-[2rem]">
-                Most Popular</div>
-              <div className="text-brand-lightTeal/60 text-xs font-bold uppercase tracking-widest mb-2 mt-2">40-Day Tradition
-              </div>
-              <div className="font-serif text-4xl text-white font-bold mb-1">₹36,000</div>
-              <div className="text-brand-lightTeal/50 text-sm mb-6 pb-6 border-b border-brand-lightTeal/15">₹900 per session ·
-                The complete traditional <em>chilla</em></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span className="hidden">✦</span><span
-                  className="text-brand-lightTeal/50 text-xs font-semibold">Everything in 30-Day, plus:</span></li>
-                <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span
-                  className="text-brand-peach font-bold text-base">✦</span>10 additional recovery sessions</li>
-                <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Priority Nani assignment (same person daily)</li>
-                <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Lactation support guidance</li>
-                <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Postpartum nutrition check-ins</li>
-                <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span
-                  className="text-brand-peach font-bold text-base">✦</span>Family support call with care coordinator</li>
+            {/* GOLD — Flagship */}
+            <div className="bg-white rounded-[2rem] p-7 border-2 border-brand-teal shadow-lg relative card-hover transition-all duration-300 flex flex-col">
+              <div className="absolute top-0 right-0 bg-brand-teal text-white text-[10px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-xl rounded-tr-[2rem]">Flagship</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-brand-teal/60 mb-1">⭐⭐ Gold</div>
+              <h3 className="font-serif text-2xl text-brand-teal font-semibold mb-1">Nani's Care</h3>
+              <p className="text-brand-slate/50 text-xs italic mb-4">"Because you deserve to heal, while your baby thrives."</p>
+              <div className="font-serif text-3xl text-brand-teal font-bold mb-0.5">₹28,000</div>
+              <div className="text-brand-slate/40 text-xs mb-5 pb-5 border-b border-brand-teal/10">30 sessions · 90 min each · Mother + Baby</div>
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Baby massage + bath + swaddling</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Mother full postnatal body massage</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Abdominal binding (Patti)</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Warm compress therapy</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Full oil kit — Mother + Baby</li>
+                <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Welcome gift hamper</li>
               </ul>
-              <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20ready%20to%20book%20the%2040-Day%20Tradition%20Package."
-                target="_blank"
-                className="block w-full py-3.5 text-center bg-brand-peach text-white rounded-full font-semibold hover:bg-white hover:text-brand-teal transition-colors text-sm shadow-lg btn-glow">
-                Book the Complete Package
+              <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%20Gold%20Nani's%20Care%20package." target="_blank" rel="noopener noreferrer"
+                className="block w-full py-3 text-center bg-brand-teal text-white rounded-full font-semibold hover:bg-brand-teal/90 transition-colors text-sm shadow-md">
+                Enquire on WhatsApp
               </a>
-              <div className="text-center text-brand-lightTeal/40 text-xs mt-4">Most mothers who start with 30 days extend to
-                40. Start with the full programme.</div>
+            </div>
+
+            {/* PLATINUM — Most Popular */}
+            <div className="bg-brand-teal rounded-[2rem] p-7 shadow-2xl relative card-hover transition-all duration-300 flex flex-col xl:-translate-y-3">
+              <div className="absolute top-0 right-0 bg-brand-peach text-white text-[10px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-xl rounded-tr-[2rem]">Most Popular</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-brand-lightTeal/60 mb-1">⭐⭐⭐ Platinum</div>
+              <h3 className="font-serif text-2xl text-white font-semibold mb-1">Complete Japa</h3>
+              <p className="text-white/50 text-xs italic mb-4">"The full 40-day ritual — tradition honored, completely."</p>
+              <div className="font-serif text-3xl text-white font-bold mb-0.5">₹42,000</div>
+              <div className="text-brand-lightTeal/50 text-xs mb-5 pb-5 border-b border-brand-lightTeal/15">40 sessions · 90 min each · + Lactation & Nutrition</div>
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>Everything in Gold, for 40 days</li>
+                <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>2 lactation consultant sessions</li>
+                <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>Printed postnatal diet guide</li>
+                <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>Priority slot lock — never rescheduled</li>
+                <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>Coordinator check-in call</li>
+                <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>Premium Ayurvedic oil upgrade kit</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%20Platinum%20Complete%20Japa%20package." target="_blank" rel="noopener noreferrer"
+                className="block w-full py-3 text-center bg-brand-peach text-white rounded-full font-semibold hover:bg-white hover:text-brand-teal transition-colors text-sm shadow-lg btn-glow">
+                Book Complete Japa
+              </a>
+              <div className="text-center text-brand-lightTeal/40 text-[11px] mt-3">40-day complete chilla period — most mothers prefer this.</div>
+            </div>
+
+            {/* DIAMOND */}
+            <div className="bg-brand-slate rounded-[2rem] p-7 shadow-xl relative card-hover transition-all duration-300 flex flex-col">
+              <div className="absolute top-0 right-0 bg-brand-peach/80 text-white text-[10px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-xl rounded-tr-[2rem]">Maximum Care</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-1">💎 Diamond</div>
+              <h3 className="font-serif text-2xl text-white font-semibold mb-1">Full Japa Maid</h3>
+              <p className="text-white/40 text-xs italic mb-4">"Your home, fully covered — sunrise to sunset."</p>
+              <div className="font-serif text-3xl text-white font-bold mb-0.5">₹38,000</div>
+              <div className="text-white/30 text-xs mb-5 pb-5 border-b border-white/10">12-hr daily specialist · 8am–8pm · 30 days</div>
+              <ul className="space-y-2.5 mb-6 flex-1">
+                <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Daily baby massage, bath & swaddling</li>
+                <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Mother postnatal massage + binding</li>
+                <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Feeding & latching assistance</li>
+                <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Full newborn care 8am–8pm</li>
+                <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Daily coordinator oversight</li>
+                <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Same-day replacement guarantee</li>
+              </ul>
+              <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%20Diamond%20Full%20Japa%20Maid%20package." target="_blank" rel="noopener noreferrer"
+                className="block w-full py-3 text-center border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white hover:text-brand-slate transition-colors text-sm">
+                Enquire on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          {/* Add-ons strip */}
+          <div className="bg-white rounded-3xl p-6 md:p-8 border border-brand-teal/10 shadow-sm mb-10">
+            <div className="text-center mb-6">
+              <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-1">À La Carte</div>
+              <h3 className="font-serif text-2xl text-brand-teal font-semibold">Add-On Services</h3>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+              {[
+                { name: "Lactation Consultant", price: "₹1,500", unit: "/ session" },
+                { name: "Postnatal Diet Guide", price: "₹500", unit: "one-time" },
+                { name: "Premium Oil Upgrade", price: "₹1,000", unit: "one-time" },
+                { name: "Baby Gift Hamper", price: "₹1,800", unit: "one-time" },
+                { name: "Continuation Sessions", price: "₹600", unit: "/ session" },
+                { name: "5-Session Top-Up Pack", price: "₹2,500", unit: "5 sessions" },
+              ].map((addon) => (
+                <div key={addon.name} className="bg-brand-lightTeal/30 rounded-2xl p-4 border border-brand-teal/10">
+                  <div className="text-brand-teal font-semibold text-xs leading-snug mb-2">{addon.name}</div>
+                  <div className="font-serif text-lg font-bold text-brand-teal">{addon.price}</div>
+                  <div className="text-brand-slate/40 text-[10px]">{addon.unit}</div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -926,16 +978,94 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto text-center">
             <div>
               <div className="font-semibold text-brand-teal text-sm mb-1">No hidden fees</div>
-              <div className="text-brand-slate/50 text-xs leading-relaxed">Transparent session pricing, always.</div>
+              <div className="text-brand-slate/50 text-xs">Transparent pricing, always.</div>
             </div>
             <div>
-              <div className="font-semibold text-brand-teal text-sm mb-1">Guaranteed replacement</div>
-              <div className="text-brand-slate/50 text-xs leading-relaxed">If your Nani is unwell, we cover it.</div>
+              <div className="font-semibold text-brand-teal text-sm mb-1">Missed session covered</div>
+              <div className="text-brand-slate/50 text-xs">Backup specialist on standby.</div>
             </div>
             <div>
-              <div className="font-semibold text-brand-teal text-sm mb-1">Cancel anytime</div>
-              <div className="text-brand-slate/50 text-xs leading-relaxed">No lock-in. We earn your trust daily.</div>
+              <div className="font-semibold text-brand-teal text-sm mb-1">Welcome hamper included</div>
+              <div className="text-brand-slate/50 text-xs">In every package, from Day 1.</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ─────────────────────────────────────────────────── */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <div className="text-center mb-12">
+            <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-3">Got questions?</div>
+            <h2 className="font-serif text-4xl text-brand-teal font-semibold">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: "What is Japa care and who is it for?",
+                a: "Japa care (also known as jaapa or chilla care) is traditional Indian postnatal care covering the first 30–40 days after childbirth. It includes daily baby massage (maalish), newborn bathing, and postpartum recovery support for the mother. It is for any new mother who wants safe, professional, and culturally rooted care at home."
+              },
+              {
+                q: "Which package should I choose?",
+                a: "If you want baby care only, start with Silver (₹18,000 · 45 min). For mother + baby care, Gold is our flagship (₹28,000 · 90 min). For the complete 40-day chilla with lactation and nutrition support, choose Platinum (₹42,000). If you need a full-day specialist at home from 8am–8pm, Diamond is your answer (₹38,000)."
+              },
+              {
+                q: "Does the Silver package include mother massage?",
+                a: "No. The Silver (Nani's Blessing) package is designed for baby care only — 45-minute sessions covering baby maalish, warm bath, and swaddling. Mother postnatal massage starts from the Gold package (90-minute sessions)."
+              },
+              {
+                q: "What if my specialist can't come one day?",
+                a: "Every package includes a Missed Session Guarantee. A trained backup specialist is always on standby. If your primary Nani is unwell or unavailable, a replacement arrives the same morning — you never lose a session you've paid for."
+              },
+              {
+                q: "Are the oils and techniques safe for my newborn?",
+                a: "Yes, completely. We use only cold-pressed, doctor-approved Ayurvedic oils (sesame/coconut based) that are hypoallergenic and pediatrician-verified. Every technique is anatomically mapped — no harsh pulling, no improvisation. We have zero injuries reported across 500+ sessions."
+              },
+              {
+                q: "When should I book?",
+                a: "We recommend booking at week 36 of pregnancy or immediately after delivery. Our slots fill up weeks in advance in Pune. Early booking also ensures your preferred daily time slot and dedicated specialist assignment."
+              },
+              {
+                q: "Which areas in Pune do you serve?",
+                a: "We currently serve all major areas of Pune including Wakad, Baner, Koregaon Park, Kothrud, Viman Nagar, Hinjewadi, Aundh, Kalyani Nagar, and surrounding localities. WhatsApp us to confirm availability in your area."
+              },
+              {
+                q: "Can I add services to my existing package?",
+                a: "Absolutely. All our à la carte add-ons — lactation consultant sessions (₹1,500), postnatal diet guide (₹500), premium oil upgrade (₹1,000), baby gift hamper (₹1,800), and continuation sessions (₹600) — can be added to any package at any time."
+              },
+            ].map((item, i) => (
+              <div key={i} className="border border-brand-teal/12 rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-brand-lightTeal/20 transition-colors"
+                  aria-expanded={openFaq === i}
+                >
+                  <span className="font-semibold text-brand-slate text-sm leading-snug">{item.q}</span>
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal transition-transform duration-300" style={{ transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)" }}>
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-5 text-brand-slate/65 text-sm leading-relaxed border-t border-brand-teal/8 pt-4 bg-brand-lightTeal/10 animate-[fadeUp_0.2s_ease-out]">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="text-brand-slate/50 text-sm mb-4">Still have questions? We're happy to help.</p>
+            <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I%20have%20a%20question%20about%20your%20packages." target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-teal text-white px-7 py-3 rounded-full font-semibold text-sm btn-teal transition-all shadow-md">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+              </svg>
+              Ask on WhatsApp
+            </a>
           </div>
         </div>
       </section>
