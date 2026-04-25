@@ -946,8 +946,16 @@ export default function Home() {
   </section>
 
   {/* ── Final CTA ───────────────────────────────────────────── */}
-  <section className="py-20 bg-brand-cream border-t border-brand-teal/8">
-    <div className="container mx-auto px-6 max-w-3xl text-center">
+  <section className="py-20 bg-brand-cream border-t border-brand-teal/8 relative overflow-hidden">
+    {/* Background image */}
+    <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <img
+        src="/assets/images/Final-CTA-Section.png"
+        alt=""
+        className="w-full h-full object-cover opacity-[0.07]"
+      />
+    </div>
+    <div className="container mx-auto px-6 max-w-3xl text-center relative z-10">
       {/* Illustration: simple maternal warmth motif */}
       <div className="w-20 h-20 mx-auto mb-8 bg-brand-teal rounded-full p-3 shadow-lg">
         <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Maternal Care Motif" />
