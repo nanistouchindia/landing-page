@@ -90,12 +90,14 @@ export default function Home() {
               </svg>
             </button>
 
-            {/* Left: Reel Video Placeholder */}
+            {/* Left: Lifestyle Image */}
             <div className="w-full md:w-5/12 h-[200px] sm:h-[250px] md:h-auto relative bg-brand-teal overflow-hidden flex-shrink-0">
-               {/* Subtle pattern or image placeholder */}
-               <img src="/Logo-removebg-preview.png" className="absolute -left-10 -bottom-10 w-64 h-64 opacity-10 object-contain" alt="Nani's Touch Logo Watermark" />
-               
-               <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/80 via-transparent to-brand-slate/20"></div>
+               <img
+                 src="/assets/images/Popup-Modal.png"
+                 alt="Gentle newborn care"
+                 className="absolute inset-0 w-full h-full object-cover"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/85 via-brand-teal/30 to-brand-teal/40"></div>
                
                {/* Reel UI Elements */}
                <div className="absolute inset-0 flex items-center justify-center">
@@ -308,15 +310,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* SVG Illustration: mother + baby, monoline brand style */}
-            <div className="relative z-10 p-12 flex flex-col items-center">
-
-              <img src="/Logo-removebg-preview.png" className="w-full hero-blob float z-10" alt="Nani's Touch Premium Japa Care in Pune" />
-
+            {/* Hero image: mother caring for newborn */}
+            <div className="relative z-10 w-full h-full min-h-[420px]">
+              <img
+                src="/assets/images/Hero-Right-Panel-Main-Feature-Image.png"
+                alt="Loving postpartum care for mother and baby"
+                className="w-full h-full object-cover rounded-[3rem]"
+                style={{ minHeight: "420px" }}
+              />
+              {/* Warm gradient overlay at bottom */}
+              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-t from-brand-teal/70 via-transparent to-transparent pointer-events-none"></div>
               {/* Logo watermark at bottom */}
-              <div className="flex items-center gap-2 opacity-50 mt-2">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-80">
                 <img src="/Logo-removebg-preview.png" className="w-5 h-5 object-contain" alt="Nani's Touch Mini Logo" />
-                <span className="font-serif text-white text-sm font-semibold tracking-wide">Nani's Touch</span>
+                <span className="font-serif text-white text-sm font-semibold tracking-wide drop-shadow">Nani's Touch</span>
               </div>
             </div>
 
@@ -439,6 +446,80 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── Our Services Gallery ────────────────────────────────── */}
+  <section className="py-20 bg-brand-cream overflow-hidden">
+    <div className="container mx-auto px-6 max-w-7xl">
+      <div className="text-center mb-14">
+        <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-3">What we bring to your home</div>
+        <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4" style={{"textWrap": "pretty"}}>
+          Ancient wisdom.<br />
+          <span className="italic text-brand-peach">Modern care.</span>
+        </h2>
+        <p className="text-brand-slate/60 text-lg font-light max-w-2xl mx-auto">Every session is a ritual — rooted in generations of Indian postpartum tradition, verified by modern pediatric science.</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Card 1: Baby Maalish — featured tall */}
+        <div className="relative rounded-3xl overflow-hidden group h-[480px] lg:row-span-2">
+          <img src="/assets/images/Gallery-Card-1.png" alt="Baby maalish - traditional newborn massage" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-teal/90 via-brand-teal/20 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>Shishu Maalish
+            </div>
+            <h3 className="font-serif text-2xl text-white font-semibold mb-2">Baby Massage</h3>
+            <p className="text-white/75 text-sm leading-relaxed">Gentle vagus-nerve strokes using doctor-approved oils. Aids digestion, deepens sleep, and stimulates your baby's growing nervous system.</p>
+          </div>
+        </div>
+
+        {/* Card 2: Postpartum Mother Care */}
+        <div className="relative rounded-3xl overflow-hidden group h-[220px]">
+          <img src="/assets/images/Gallery-Card-2.png" alt="Postpartum mother massage and recovery care" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/85 via-brand-slate/20 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>Mata ka Maalish
+            </div>
+            <h3 className="font-serif text-xl text-white font-semibold">Postpartum Recovery</h3>
+            <p className="text-white/70 text-xs leading-relaxed mt-1">Targeted massage to ease back pain, reduce cortisol, and restore your body's natural strength.</p>
+          </div>
+        </div>
+
+        {/* Card 3: Traditional Dhuri / First Bath */}
+        <div className="relative rounded-3xl overflow-hidden group h-[220px]">
+          <img src="/assets/images/Gallery-Card-3.png" alt="Traditional dhuri and first bath ceremony for newborn" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-teal/85 via-brand-teal/20 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>Pehla Snaan
+            </div>
+            <h3 className="font-serif text-xl text-white font-semibold">Traditional Dhuri & Bath</h3>
+            <p className="text-white/70 text-xs leading-relaxed mt-1">The sacred first bath ritual — warm water, turmeric, neem, and the hands that know exactly how.</p>
+          </div>
+        </div>
+
+        {/* Card 4: Herbal Oil Kit — wide banner */}
+        <div className="relative rounded-3xl overflow-hidden group h-[220px] lg:col-span-2">
+          <img src="/assets/images/Gallery-Card-4.png" alt="Doctor-approved herbal oils and natural care products" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-slate/85 via-brand-slate/40 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 p-6 max-w-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>Aushadhi Oils
+            </div>
+            <h3 className="font-serif text-xl text-white font-semibold">Doctor-Approved Herbal Kit</h3>
+            <p className="text-white/70 text-xs leading-relaxed mt-1">Pure sesame, coconut, and fenugreek-infused oils. Hypoallergenic, cold-pressed, pediatrician-verified — a new kit prepared fresh every visit.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mt-10 text-center">
+        <p className="text-brand-slate/50 text-sm font-medium italic">"Every technique we use is mapped by our pediatric advisor. Nothing random. Nothing rough. Only what your baby's body and your body actually need."</p>
       </div>
     </div>
   </section>
@@ -591,57 +672,63 @@ export default function Home() {
       </div>
 
       <div className="grid md:grid-cols-4 gap-4">
-        <div className="bg-brand-lightTeal rounded-3xl p-6 flex flex-col gap-4 relative overflow-hidden">
-          <div className="text-xs font-bold uppercase tracking-widest text-brand-teal opacity-60">8:55 AM</div>
-          <div><svg className="w-7 h-7 mb-3 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+
+        {/* Step 1: She Arrives */}
+        <div className="bg-brand-lightTeal rounded-3xl flex flex-col overflow-hidden relative">
+          <div className="relative h-36 overflow-hidden">
+            <img src="/assets/images/Session-Timeline-Step-1.png" alt="Professional caregiver arriving at home" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-lightTeal/80"></div>
+          </div>
+          <div className="p-6 flex flex-col gap-3">
+            <div className="text-xs font-bold uppercase tracking-widest text-brand-teal opacity-60">8:55 AM</div>
             <div className="font-serif text-xl font-semibold mb-2 text-brand-slate">She arrives</div>
-            <div className="text-sm leading-relaxed text-brand-slate/70">Fresh uniform. Kit sanitised. Oils ready. She
-              greets you — professional, warm, unhurried.</div>
+            <div className="text-sm leading-relaxed text-brand-slate/70">Fresh uniform. Kit sanitised. Oils ready. She greets you — professional, warm, unhurried.</div>
           </div>
           <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-brand-teal/8"></div>
         </div>
-        <div className="bg-brand-teal rounded-3xl p-6 flex flex-col gap-4 relative overflow-hidden">
-          <div className="text-xs font-bold uppercase tracking-widest text-white opacity-70">9:00 AM</div>
-          <div><svg className="w-7 h-7 mb-3 text-white opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
+
+        {/* Step 2: Baby Massage */}
+        <div className="bg-brand-teal rounded-3xl flex flex-col overflow-hidden relative">
+          <div className="relative h-36 overflow-hidden">
+            <img src="/assets/images/Session-Timeline-Step-2.png" alt="Gentle baby massage with warm oils" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-teal/80"></div>
+          </div>
+          <div className="p-6 flex flex-col gap-3">
+            <div className="text-xs font-bold uppercase tracking-widest text-white opacity-70">9:00 AM</div>
             <div className="font-serif text-xl font-semibold mb-2 text-white">Baby massage</div>
-            <div className="text-sm leading-relaxed text-white opacity-80">Gentle vagus-nerve strokes. Anatomically mapped.
-              Your baby relaxes visibly. You watch, reassured.</div>
+            <div className="text-sm leading-relaxed text-white opacity-80">Gentle vagus-nerve strokes. Anatomically mapped. Your baby relaxes visibly. You watch, reassured.</div>
           </div>
           <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-white/10"></div>
         </div>
-        <div className="bg-brand-peach rounded-3xl p-6 flex flex-col gap-4 relative overflow-hidden">
-          <div className="text-xs font-bold uppercase tracking-widest text-white opacity-70">9:45 AM</div>
-          <div><svg className="w-7 h-7 mb-3 text-white opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
+
+        {/* Step 3: Your Turn */}
+        <div className="bg-brand-peach rounded-3xl flex flex-col overflow-hidden relative">
+          <div className="relative h-36 overflow-hidden">
+            <img src="/assets/images/Session-Timeline-Step-3.png" alt="Postpartum massage for the mother" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-peach/80"></div>
+          </div>
+          <div className="p-6 flex flex-col gap-3">
+            <div className="text-xs font-bold uppercase tracking-widest text-white opacity-70">9:45 AM</div>
             <div className="font-serif text-xl font-semibold mb-2 text-white">Your turn</div>
-            <div className="text-sm leading-relaxed text-white opacity-80">Postpartum massage for you. Back pain eased.
-              Cortisol down. Oxytocin up. You actually exhale.</div>
+            <div className="text-sm leading-relaxed text-white opacity-80">Postpartum massage for you. Back pain eased. Cortisol down. Oxytocin up. You actually exhale.</div>
           </div>
           <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-white/10"></div>
         </div>
-        <div className="bg-brand-lightTeal rounded-3xl p-6 flex flex-col gap-4 relative overflow-hidden">
-          <div className="text-xs font-bold uppercase tracking-widest text-brand-teal opacity-60">11:00 AM</div>
-          <div><svg className="w-7 h-7 mb-3 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
+
+        {/* Step 4: She Leaves */}
+        <div className="bg-brand-lightTeal rounded-3xl flex flex-col overflow-hidden relative">
+          <div className="relative h-36 overflow-hidden">
+            <img src="/assets/images/Session-Timeline-Step-4.png" alt="Happy mother and baby after a care session" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-lightTeal/80"></div>
+          </div>
+          <div className="p-6 flex flex-col gap-3">
+            <div className="text-xs font-bold uppercase tracking-widest text-brand-teal opacity-60">11:00 AM</div>
             <div className="font-serif text-xl font-semibold mb-2 text-brand-slate">She leaves</div>
-            <div className="text-sm leading-relaxed text-brand-slate/70">Baby bathed. Both of you cared for. Privacy
-              restored. Your home is yours again.</div>
+            <div className="text-sm leading-relaxed text-brand-slate/70">Baby bathed. Both of you cared for. Privacy restored. Your home is yours again.</div>
           </div>
           <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-brand-teal/8"></div>
         </div>
+
       </div>
     </div>
   </section>
