@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { submitWaitlist } from "@/app/actions";
+import { submitWaitlist, getSiteSettings } from "@/app/actions";
 
 export default function Home() {
   const [navOpacity, setNavOpacity] = useState(0);
   const [slots, setSlots] = useState(4);
   const [slotsFontWeight, setSlotsFontWeight] = useState("semibold");
   const [showPopup, setShowPopup] = useState(false);
+  const [barText, setBarText] = useState("⚡ Only 4 new family slots remaining in Pune this week — Secure yours now →");
+  const [barVisible, setBarVisible] = useState(true);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -58,6 +60,17 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    getSiteSettings().then((result) => {
+      if (result.data) {
+        if (result.data.scarcity_bar_text) setBarText(result.data.scarcity_bar_text);
+        if (result.data.scarcity_bar_visible !== undefined) {
+          setBarVisible(result.data.scarcity_bar_visible !== "false");
+        }
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -162,11 +175,11 @@ export default function Home() {
       {/* ── Sticky Header Wrapper ──────────────────────────────────── */}
       <header className="fixed top-0 w-full z-50 flex flex-col">
         {/* ── Scarcity Bar ──────────────────────────────────── */}
-        <div className={`scarcity-bar text-white text-center px-4 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 overflow-hidden ${navOpacity === 1 ? 'max-h-0 py-0 opacity-0' : 'max-h-[80px] py-2.5 opacity-100'}`}>
-          <span className="opacity-90 inline-block leading-tight">
-            ⚡ Only <span id="slots-count" style={{ fontWeight: slotsFontWeight }}>{slots}</span> new family slots remaining in Pune this week — <a href="#packages" className="underline font-bold whitespace-nowrap inline-block ml-1">Secure yours now →</a>
-          </span>
-        </div>
+        {barVisible && (
+          <div className={`scarcity-bar text-white text-center px-4 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 overflow-hidden ${navOpacity === 1 ? 'max-h-0 py-0 opacity-0' : 'max-h-[80px] py-2.5 opacity-100'}`}>
+            <span className="opacity-90 inline-block leading-tight">{barText}</span>
+          </div>
+        )}
 
         {/* ── Navigation ──────────────────────────────────────────── */}
         <nav className="w-full relative transition-all duration-300" id="navbar">
