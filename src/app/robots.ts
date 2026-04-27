@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin", "/admin/"],
       },
     ],
-    sitemap: "https://nanistouch.com/sitemap.xml",
-    host: "https://nanistouch.com",
+    sitemap: "https://www.nanistouch.in/sitemap.xml",
+    host: "https://www.nanistouch.in",
   };
 }

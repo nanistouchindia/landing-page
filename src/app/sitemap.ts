@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://nanistouch.com";
+const BASE_URL = "https://www.nanistouch.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
