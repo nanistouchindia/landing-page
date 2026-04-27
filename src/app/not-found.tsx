@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -18,11 +19,7 @@ export default function NotFound() {
         {/* Logo */}
         <Link href="/" className="inline-flex items-center gap-3 mb-12">
           <div className="w-10 h-10 bg-brand-teal rounded-full p-1.5 flex items-center justify-center">
-            <img
-              src="/Logo-removebg-preview.png"
-              alt="Nani's Touch"
-              className="w-full h-full object-contain"
-            />
+            <Image src="/Logo-removebg-preview.png" alt="Nani's Touch" width={40} height={40} className="object-contain" />
           </div>
           <span className="font-serif text-xl font-bold text-brand-teal">Nani&apos;s Touch</span>
         </Link>
