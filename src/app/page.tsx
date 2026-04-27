@@ -84,6 +84,7 @@ export default function Home() {
             {/* Close button */}
             <button
               onClick={() => setShowPopup(false)}
+              aria-label="Close waitlist form"
               className="absolute top-3 right-3 sm:top-4 sm:right-4 z-[110] w-8 h-8 flex items-center justify-center rounded-full bg-white/60 hover:bg-white/90 text-brand-teal backdrop-blur-md transition-all shadow-md"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -93,10 +94,11 @@ export default function Home() {
 
             {/* Left: Lifestyle Image */}
             <div className="w-full md:w-5/12 h-[200px] sm:h-[250px] md:h-auto relative bg-brand-teal overflow-hidden flex-shrink-0">
-              <img
+              <Image
                 src="/assets/images/Popup-Modal.png"
                 alt="Gentle newborn care"
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/85 via-brand-teal/30 to-brand-teal/40"></div>
 
@@ -106,7 +108,7 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-peach animate-pulse"></span>
                   Live Care
                 </div>
-                <h3 className="text-white font-serif text-2xl font-semibold leading-snug mb-1">Experience the <br />Nani's Touch</h3>
+                <p className="text-white font-serif text-2xl font-semibold leading-snug mb-1">Experience the <br />Nani&apos;s Touch</p>
                 <p className="text-white/80 text-sm font-light">See why 500+ mothers trust our process.</p>
               </div>
             </div>
@@ -114,7 +116,7 @@ export default function Home() {
             {/* Right: Form */}
             <div className="w-full md:w-7/12 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
               <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-2">Exclusive Waitlist</div>
-              <h2 className="font-serif text-3xl md:text-4xl text-brand-teal font-semibold mb-3">Secure Your Slot</h2>
+              <p className="font-serif text-3xl md:text-4xl text-brand-teal font-semibold mb-3">Secure Your Slot</p>
               <p className="text-brand-slate/60 text-sm mb-6 leading-relaxed">
                 Our specialized Japa care slots fill up weeks in advance. Join the waitlist today to get priority booking and an exclusive consultation.
               </p>
@@ -126,7 +128,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-serif text-2xl text-brand-teal font-semibold">You're on the list!</h3>
+                  <p className="font-serif text-2xl text-brand-teal font-semibold">You&apos;re on the list!</p>
                   <p className="text-brand-slate/60 text-sm text-center">We'll reach out on WhatsApp shortly.</p>
                 </div>
               ) : (
@@ -176,7 +178,7 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 relative z-10 flex justify-between items-center max-w-7xl">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-brand-teal rounded-full p-1 flex items-center justify-center">
-                <img src="/Logo-removebg-preview.png" alt="Nani's Touch" className="w-full h-full object-contain" />
+                <Image src="/Logo-removebg-preview.png" alt="Nani's Touch" width={36} height={36} className="object-contain" />
               </div>
               <span className="font-serif text-xl font-bold text-brand-teal">Nani's Touch</span>
             </div>
@@ -308,17 +310,18 @@ export default function Home() {
 
                 {/* Hero image: mother caring for newborn */}
                 <div className="relative z-10 w-full h-full min-h-[420px]">
-                  <img
+                  <Image
                     src="/assets/images/Hero-Right-Panel-Main-Feature-Image.png"
                     alt="Loving postpartum care for mother and baby"
-                    className="w-full h-full object-cover rounded-[3rem]"
-                    style={{ minHeight: "420px" }}
+                    fill
+                    priority
+                    className="object-cover rounded-[3rem]"
                   />
                   {/* Warm gradient overlay at bottom */}
                   <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-t from-brand-teal/70 via-transparent to-transparent pointer-events-none"></div>
                   {/* Logo watermark at bottom */}
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-80">
-                    <img src="/Logo-removebg-preview.png" className="w-5 h-5 object-contain" alt="Nani's Touch Mini Logo" />
+                    <Image src="/Logo-removebg-preview.png" width={20} height={20} className="object-contain" alt="Nani's Touch Mini Logo" />
                     <span className="font-serif text-white text-sm font-semibold tracking-wide drop-shadow">Nani's Touch</span>
                   </div>
                 </div>
@@ -462,7 +465,7 @@ export default function Home() {
 
             {/* Card 1: Baby Maalish — featured tall */}
             <div className="relative rounded-3xl overflow-hidden group h-[480px] lg:row-span-2">
-              <img src="/assets/images/Gallery-Card-1.png" alt="Baby maalish - traditional newborn massage" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/assets/images/Gallery-Card-1.png" alt="Baby maalish - traditional newborn massage" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-teal/90 via-brand-teal/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-3">
@@ -475,7 +478,7 @@ export default function Home() {
 
             {/* Card 2: Postpartum Mother Care */}
             <div className="relative rounded-3xl overflow-hidden group h-[220px]">
-              <img src="/assets/images/Gallery-Card-2.png" alt="Postpartum mother massage and recovery care" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/assets/images/Gallery-Card-2.png" alt="Postpartum mother massage and recovery care" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-slate/85 via-brand-slate/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-2">
@@ -488,7 +491,7 @@ export default function Home() {
 
             {/* Card 3: Traditional Dhuri / First Bath */}
             <div className="relative rounded-3xl overflow-hidden group h-[220px]">
-              <img src="/assets/images/Gallery-Card-3.png" alt="Traditional dhuri and first bath ceremony for newborn" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/assets/images/Gallery-Card-3.png" alt="Traditional dhuri and first bath ceremony for newborn" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-teal/85 via-brand-teal/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-2">
@@ -501,7 +504,7 @@ export default function Home() {
 
             {/* Card 4: Herbal Oil Kit — wide banner */}
             <div className="relative rounded-3xl overflow-hidden group h-[220px] lg:col-span-2">
-              <img src="/assets/images/Gallery-Card-4.png" alt="Doctor-approved herbal oils and natural care products" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src="/assets/images/Gallery-Card-4.png" alt="Doctor-approved herbal oils and natural care products" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-r from-brand-slate/85 via-brand-slate/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6 max-w-md">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-peach/90 text-white text-[10px] font-bold uppercase tracking-widest mb-2">
@@ -672,7 +675,7 @@ export default function Home() {
             {/* Step 1: She Arrives */}
             <div className="bg-brand-lightTeal rounded-3xl flex flex-col overflow-hidden relative">
               <div className="relative h-36 overflow-hidden">
-                <img src="/assets/images/Session-Timeline-Step-1.png" alt="Professional caregiver arriving at home" className="w-full h-full object-cover" />
+                <Image src="/assets/images/Session-Timeline-Step-1.png" alt="Professional caregiver arriving at home" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-lightTeal/80"></div>
               </div>
               <div className="p-6 flex flex-col gap-3">
@@ -686,7 +689,7 @@ export default function Home() {
             {/* Step 2: Baby Massage */}
             <div className="bg-brand-teal rounded-3xl flex flex-col overflow-hidden relative">
               <div className="relative h-36 overflow-hidden">
-                <img src="/assets/images/Session-Timeline-Step-2.png" alt="Gentle baby massage with warm oils" className="w-full h-full object-cover" />
+                <Image src="/assets/images/Session-Timeline-Step-2.png" alt="Gentle baby massage with warm oils" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-teal/80"></div>
               </div>
               <div className="p-6 flex flex-col gap-3">
@@ -700,7 +703,7 @@ export default function Home() {
             {/* Step 3: Your Turn */}
             <div className="bg-brand-peach rounded-3xl flex flex-col overflow-hidden relative">
               <div className="relative h-36 overflow-hidden">
-                <img src="/assets/images/Session-Timeline-Step-3.png" alt="Postpartum massage for the mother" className="w-full h-full object-cover" />
+                <Image src="/assets/images/Session-Timeline-Step-3.png" alt="Postpartum massage for the mother" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-peach/80"></div>
               </div>
               <div className="p-6 flex flex-col gap-3">
@@ -714,7 +717,7 @@ export default function Home() {
             {/* Step 4: She Leaves */}
             <div className="bg-brand-lightTeal rounded-3xl flex flex-col overflow-hidden relative">
               <div className="relative h-36 overflow-hidden">
-                <img src="/assets/images/Session-Timeline-Step-4.png" alt="Happy mother and baby after a care session" className="w-full h-full object-cover" />
+                <Image src="/assets/images/Session-Timeline-Step-4.png" alt="Happy mother and baby after a care session" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-lightTeal/80"></div>
               </div>
               <div className="p-6 flex flex-col gap-3">
@@ -1074,16 +1077,17 @@ export default function Home() {
       <section className="py-20 bg-brand-cream border-t border-brand-teal/8 relative overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <img
+          <Image
             src="/assets/images/Final-CTA-Section.png"
             alt=""
-            className="w-full h-full object-cover opacity-30"
+            fill
+            className="object-cover opacity-30"
           />
         </div>
         <div className="container mx-auto px-6 max-w-3xl text-center relative z-10">
           {/* Illustration: simple maternal warmth motif */}
           <div className="w-20 h-20 mx-auto mb-8 bg-brand-teal rounded-full p-3 shadow-lg">
-            <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain" alt="Nani's Touch Maternal Care Motif" />
+            <Image src="/Logo-removebg-preview.png" width={56} height={56} className="object-contain" alt="Nani's Touch Maternal Care Motif" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4" style={{ "textWrap": "pretty" }}>
             Motherhood is beautiful.<br />
@@ -1121,7 +1125,7 @@ export default function Home() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-white/10 rounded-full p-1.5 flex items-center justify-center">
-                <img src="/Logo-removebg-preview.png" className="w-full h-full object-contain brightness-0 invert" alt="Nani's Touch Logo" />
+                <Image src="/Logo-removebg-preview.png" width={40} height={40} className="object-contain brightness-0 invert" alt="Nani's Touch Logo" />
               </div>
               <span className="font-serif text-2xl font-bold">Nani&apos;s Touch</span>
             </div>
