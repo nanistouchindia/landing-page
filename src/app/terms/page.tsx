@@ -127,7 +127,7 @@ export default function TermsPage() {
               <strong>Nani&apos;s Touch</strong><br />
               Pune, Maharashtra, India<br />
               Email: <a href="mailto:support@nanistouch.in" className="text-brand-teal hover:underline">support@nanistouch.in</a><br />
-              WhatsApp: <a href="https://wa.me/919999999999" className="text-brand-teal hover:underline">+91 99999 99999</a>
+              WhatsApp: <a href="https://wa.me/919112618112" className="text-brand-teal hover:underline">+91 91126 18112</a>
             </address>
           </section>
 

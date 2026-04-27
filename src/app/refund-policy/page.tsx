@@ -113,7 +113,7 @@ export default function RefundPolicyPage() {
               To request a cancellation or refund, please contact us via:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-brand-slate/75 mt-3">
-              <li>WhatsApp: <a href="https://wa.me/919999999999" className="text-brand-teal hover:underline">+91 99999 99999</a></li>
+              <li>WhatsApp: <a href="https://wa.me/919112618112" className="text-brand-teal hover:underline">+91 91126 18112</a></li>
               <li>Email: <a href="mailto:support@nanistouch.in" className="text-brand-teal hover:underline">support@nanistouch.in</a></li>
             </ul>
             <p className="text-brand-slate/75 leading-relaxed mt-3">
@@ -135,7 +135,7 @@ export default function RefundPolicyPage() {
               <strong>Nani&apos;s Touch</strong><br />
               Pune, Maharashtra, India<br />
               Email: <a href="mailto:support@nanistouch.in" className="text-brand-teal hover:underline">support@nanistouch.in</a><br />
-              WhatsApp: <a href="https://wa.me/919999999999" className="text-brand-teal hover:underline">+91 99999 99999</a>
+              WhatsApp: <a href="https://wa.me/919112618112" className="text-brand-teal hover:underline">+91 91126 18112</a>
             </address>
           </section>
 
