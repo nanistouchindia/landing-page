@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     "geo.placename": "Pune, Maharashtra, India",
     "geo.position": "18.5204;73.8567",
     ICBM: "18.5204, 73.8567",
-    "og:phone_number": "+919999999999",
+    "og:phone_number": "+919112618112",
     "og:locality": "Pune",
     "og:region": "Maharashtra",
     "og:country-name": "India",
@@ -187,7 +187,7 @@ const jsonLd = {
       description:
         "Pune's most trusted pediatrician-certified Japa care service offering professional baby maalish, postpartum massage, traditional dhuri and newborn bathing at home. Background-checked professionals, WHO-protocol techniques.",
       url: BASE_URL,
-      telephone: "+919999999999",
+      telephone: "+919112618112",
       priceRange: "₹₹₹",
       currenciesAccepted: "INR",
       paymentAccepted: "Cash, UPI, Bank Transfer",
@@ -240,26 +240,47 @@ const jsonLd = {
         itemListElement: [
           {
             "@type": "Offer",
-            name: "30-Day Japa Care Package",
+            name: "Silver – Nani's Blessing",
             description:
-              "30 days of professional Japa care including daily baby maalish, postpartum massage for mother, traditional newborn bathing and herbal oil kit.",
+              "30 sessions, 45 min each. Baby-only Japa care with traditional maalish, warm water bath, swaddling, Ayurvedic oil kit, and missed-session guarantee.",
+            price: "18000",
+            priceCurrency: "INR",
+            availability: "https://schema.org/LimitedAvailability",
+          },
+          {
+            "@type": "Offer",
+            name: "Gold – Nani's Care (Flagship)",
+            description:
+              "30 sessions, 90 min each. Complete Mother + Baby care including daily baby maalish, postpartum massage, abdominal binding (Patti), herbal bath, and WhatsApp daily care log.",
             price: "28000",
             priceCurrency: "INR",
             availability: "https://schema.org/LimitedAvailability",
           },
           {
             "@type": "Offer",
-            name: "40-Day Tradition Japa Care Package",
+            name: "Platinum – Complete Japa (Most Popular)",
             description:
-              "Complete 40-day traditional chilla care including daily baby maalish, postpartum massage, dhuri snaan, lactation support and postpartum nutrition guidance.",
-            price: "36000",
+              "40 sessions, 90 min each. Full chilla period care with Mother + Baby maalish, lactation consultant, postpartum diet guide, and dedicated senior Nani.",
+            price: "42000",
+            priceCurrency: "INR",
+            availability: "https://schema.org/LimitedAvailability",
+          },
+          {
+            "@type": "Offer",
+            name: "Diamond – Full Japa Maid",
+            description:
+              "30-day dedicated full-time Japa maid (8 AM–8 PM, 12 hours/day). Complete household, newborn, and postpartum care. Background-checked, live-in equivalent support.",
+            price: "38000",
             priceCurrency: "INR",
             availability: "https://schema.org/LimitedAvailability",
           },
         ],
       },
       sameAs: [
-        "https://wa.me/919999999999",
+        "https://wa.me/919112618112",
+        "https://www.instagram.com/nanistouch.in/",
+        "https://www.facebook.com/nanistouch.in",
+        "https://www.linkedin.com/company/nanistouchin",
       ],
     },
 
@@ -340,10 +361,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "What is the difference between the 30-day and 40-day Japa care package?",
+          name: "What Japa care packages does Nani's Touch offer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The 30-Day Recovery package (₹28,000) covers foundational Japa care including daily baby maalish, mother massage and newborn bathing. The 40-Day Tradition package (₹36,000) is the complete traditional chilla period and adds 10 extra sessions, priority Nani assignment, lactation support guidance, postpartum nutrition check-ins and family support calls.",
+            text: "Nani's Touch offers 4 packages: Silver – Nani's Blessing (₹18,000, 30 sessions, baby-only maalish); Gold – Nani's Care (₹28,000, 30 sessions, Mother + Baby, flagship); Platinum – Complete Japa (₹42,000, 40 sessions, most popular, includes lactation consultant & diet guide); Diamond – Full Japa Maid (₹38,000, 30-day full-time 12-hr daily maid). All include Ayurvedic oils, herbal bath, and missed-session guarantee.",
           },
         },
         {
@@ -359,7 +380,7 @@ const jsonLd = {
           name: "How do I book a Japa care service in Pune?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can book Nani's Touch Japa care service in Pune by messaging us on WhatsApp at +919999999999 or by joining our priority waitlist on the website. We recommend booking from week 36 of pregnancy or immediately after delivery as slots fill fast.",
+            text: "You can book Nani's Touch Japa care service in Pune by messaging us on WhatsApp at +919112618112 or by joining our priority waitlist on the website. We recommend booking from week 36 of pregnancy or immediately after delivery as slots fill fast.",
           },
         },
       ],

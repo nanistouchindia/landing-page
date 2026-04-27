@@ -139,7 +139,7 @@ export default function Home() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">WhatsApp Number</label>
-                    <input type="tel" required placeholder="+91 99999 99999" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
+                    <input type="tel" required placeholder="+91 91126 18112" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full px-4 py-3 rounded-xl bg-white border border-brand-teal/10 focus:border-brand-teal focus:ring-1 focus:ring-brand-teal outline-none transition-all placeholder:text-brand-slate/30 text-sm text-brand-slate" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Location (Pune)</label>
@@ -188,7 +188,7 @@ export default function Home() {
         <a href="#stories" className="hover:text-brand-peach transition-colors">Stories</a>
         <a href="#packages" className="hover:text-brand-peach transition-colors">Packages</a>
       </div>
-      <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'd%20like%20to%20book%20a%20session."
+      <a href="https://wa.me/919112618112?text=Hi%20Nani's%20Touch!%20I'd%20like%20to%20book%20a%20session."
         target="_blank"
         rel="noopener noreferrer"
         title="Book Japa Care Service in Pune - Nani's Touch"
@@ -801,7 +801,7 @@ export default function Home() {
             <li className="flex items-center gap-3 text-sm text-brand-slate/80"><span
                 className="text-brand-peach font-bold text-base">✦</span>Guaranteed replacement cover</li>
           </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%2030-Day%20Package."
+          <a href="https://wa.me/919112618112?text=Hi%20Nani's%20Touch!%20I'm%20interested%20in%20the%2030-Day%20Package."
             target="_blank"
             className="block w-full py-3.5 text-center border-2 border-brand-teal text-brand-teal rounded-full font-semibold hover:bg-brand-teal hover:text-white transition-colors text-sm">
             Enquire on WhatsApp
@@ -833,7 +833,7 @@ export default function Home() {
             <li className="flex items-center gap-3 text-sm text-brand-lightTeal/90"><span
                 className="text-brand-peach font-bold text-base">✦</span>Family support call with care coordinator</li>
           </ul>
-          <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'm%20ready%20to%20book%20the%2040-Day%20Tradition%20Package."
+          <a href="https://wa.me/919112618112?text=Hi%20Nani's%20Touch!%20I'm%20ready%20to%20book%20the%2040-Day%20Tradition%20Package."
             target="_blank"
             className="block w-full py-3.5 text-center bg-brand-peach text-white rounded-full font-semibold hover:bg-white hover:text-brand-teal transition-colors text-sm shadow-lg btn-glow">
             Book the Complete Package
@@ -877,7 +877,7 @@ export default function Home() {
         always been done.' Trust that same instinct here.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-        <a href="https://wa.me/919999999999?text=Hi%20Nani's%20Touch!%20I'd%20like%20to%20book%20a%20session."
+        <a href="https://wa.me/919112618112?text=Hi%20Nani's%20Touch!%20I'd%20like%20to%20book%20a%20session."
           target="_blank"
           className="bg-brand-peach text-white px-10 py-4 rounded-full font-semibold text-base btn-glow transition-all shadow-lg flex items-center justify-center gap-2">
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -903,7 +903,7 @@ export default function Home() {
       <address className="not-italic text-center text-xs text-brand-slate/35 mb-6 leading-relaxed">
         <strong className="text-brand-teal/60 font-semibold">Nani's Touch</strong> — Japa Care &amp; Baby Massage Service ·{" "}
         <span>Pune, Maharashtra, India</span> ·{" "}
-        <a href="tel:+919999999999" className="hover:text-brand-teal transition-colors" title="Call Nani's Touch Japa Care Pune">+91 99999 99999</a> ·{" "}
+        <a href="tel:+919112618112" className="hover:text-brand-teal transition-colors" title="Call Nani's Touch Japa Care Pune">+91 91126 18112</a> ·{" "}
         <span>Serving: Wakad · Baner · Koregaon Park · Kothrud · Viman Nagar · Hinjewadi · Aundh</span>
       </address>
 
@@ -926,7 +926,7 @@ export default function Home() {
   </footer>
 
   {/* ── Floating WhatsApp ───────────────────────────────────── */}
-  <a href="https://wa.me/919999999999" target="_blank"
+  <a href="https://wa.me/919112618112" target="_blank"
     rel="noopener noreferrer"
     title="Chat with Nani's Touch on WhatsApp - Japa Care Pune"
     aria-label="Chat with Nani's Touch Japa care service on WhatsApp"
