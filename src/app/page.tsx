@@ -10,7 +10,7 @@ export default function Home() {
   const [slotsFontWeight, setSlotsFontWeight] = useState("semibold");
   const [showPopup, setShowPopup] = useState(false);
   const [barText, setBarText] = useState("⚡ Only 4 new family slots remaining in Pune this week — Secure yours now →");
-  const [barVisible, setBarVisible] = useState(true);
+  const [barVisible, setBarVisible] = useState<boolean | null>(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -66,11 +66,11 @@ export default function Home() {
     getSiteSettings().then((result) => {
       if (result.data) {
         if (result.data.scarcity_bar_text) setBarText(result.data.scarcity_bar_text);
-        if (result.data.scarcity_bar_visible !== undefined) {
-          setBarVisible(result.data.scarcity_bar_visible !== "false");
-        }
+        setBarVisible(result.data.scarcity_bar_visible !== "false");
+      } else {
+        setBarVisible(true);
       }
-    });
+    }).catch(() => setBarVisible(true));
   }, []);
 
   useEffect(() => {
