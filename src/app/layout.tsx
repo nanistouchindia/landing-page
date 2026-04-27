@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const BASE_URL = "https://nanistouch.com";
+const BASE_URL = "https://www.nanistouch.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
