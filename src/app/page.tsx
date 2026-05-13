@@ -853,7 +853,7 @@ export default function Home() {
 
           {/* Header */}
           <div className="text-center mb-4">
-            <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-3">Transparent pricing · No surprises</div>
+            <div className="text-brand-peach font-bold text-xs uppercase tracking-widest mb-3">Japa Care · Pune</div>
             <h2 className="font-serif text-4xl md:text-5xl text-brand-teal font-semibold mb-4">Care Packages 2025</h2>
             <p className="text-brand-slate/60 max-w-2xl mx-auto text-lg font-light leading-relaxed">
               Every package combines ancestral Japa wisdom with clinical-grade hygiene — choose the level of care that feels right for your family.
@@ -882,7 +882,6 @@ export default function Home() {
               <div className="text-[10px] font-bold uppercase tracking-widest text-brand-slate/40 mb-1">⭐ Silver</div>
               <h3 className="font-serif text-2xl text-brand-teal font-semibold mb-1">Nani's Blessing</h3>
               <p className="text-brand-slate/50 text-xs italic mb-4">"A gentle start — every newborn's first right."</p>
-              <div className="font-serif text-3xl text-brand-teal font-bold mb-0.5">₹18,000</div>
               <div className="text-brand-slate/40 text-xs mb-5 pb-5 border-b border-gray-100">30 sessions · 45 min each · Baby only</div>
               <ul className="space-y-2.5 mb-6 flex-1">
                 <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Traditional oil baby massage</li>
@@ -904,7 +903,6 @@ export default function Home() {
               <div className="text-[10px] font-bold uppercase tracking-widest text-brand-teal/60 mb-1">⭐⭐ Gold</div>
               <h3 className="font-serif text-2xl text-brand-teal font-semibold mb-1">Nani's Care</h3>
               <p className="text-brand-slate/50 text-xs italic mb-4">"Because you deserve to heal, while your baby thrives."</p>
-              <div className="font-serif text-3xl text-brand-teal font-bold mb-0.5">₹28,000</div>
               <div className="text-brand-slate/40 text-xs mb-5 pb-5 border-b border-brand-teal/10">30 sessions · 90 min each · Mother + Baby</div>
               <ul className="space-y-2.5 mb-6 flex-1">
                 <li className="flex gap-2 text-sm text-brand-slate/75"><span className="text-brand-peach font-bold">✦</span>Baby massage + bath + swaddling</li>
@@ -926,7 +924,6 @@ export default function Home() {
               <div className="text-[10px] font-bold uppercase tracking-widest text-brand-lightTeal/60 mb-1">⭐⭐⭐ Platinum</div>
               <h3 className="font-serif text-2xl text-white font-semibold mb-1">Complete Japa</h3>
               <p className="text-white/50 text-xs italic mb-4">"The full 40-day ritual — tradition honored, completely."</p>
-              <div className="font-serif text-3xl text-white font-bold mb-0.5">₹42,000</div>
               <div className="text-brand-lightTeal/50 text-xs mb-5 pb-5 border-b border-brand-lightTeal/15">40 sessions · 90 min each · + Lactation & Nutrition</div>
               <ul className="space-y-2.5 mb-6 flex-1">
                 <li className="flex gap-2 text-sm text-brand-lightTeal/90"><span className="text-brand-peach font-bold">✦</span>Everything in Gold, for 40 days</li>
@@ -949,7 +946,6 @@ export default function Home() {
               <div className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-1">💎 Diamond</div>
               <h3 className="font-serif text-2xl text-white font-semibold mb-1">Full Japa Maid</h3>
               <p className="text-white/40 text-xs italic mb-4">"Your home, fully covered — sunrise to sunset."</p>
-              <div className="font-serif text-3xl text-white font-bold mb-0.5">₹38,000</div>
               <div className="text-white/30 text-xs mb-5 pb-5 border-b border-white/10">12-hr daily specialist · 8am–8pm · 30 days</div>
               <ul className="space-y-2.5 mb-6 flex-1">
                 <li className="flex gap-2 text-sm text-white/75"><span className="text-brand-peach font-bold">✦</span>Daily baby massage, bath & swaddling</li>
